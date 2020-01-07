@@ -6,9 +6,11 @@
 <a href='https://apps.apple.com/in/app/tagmate/id1468743902?mt=8'><img alt='Get it on App Store' src='https://tagmateapp.com/assets/images/apple_badge.svg' height="50" /></a> &ensp; <a href='https://play.google.com/store/apps/details?id=com.chillmate&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://tagmateapp.com/assets/images/playstore_badge_str.png' height="50" /></a> &ensp; <a href="https://www.producthunt.com/posts/tagmate?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tagmate" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167765&theme=light" alt="Tagmate - Discover & host meetups near you | Product Hunt Embed" style="width: 233px; height: 50px;" width="233px" height="50px" /></a> 
 </p>
 
+<p align="center">
 
 ![login screenshot](https://tagmateapp.com/gifs/login.gif)  ![home screenshot](https://tagmateapp.com/gifs/swipe1.gif) ![host screenshot](https://tagmateapp.com/gifs/host.gif)
 
+</p>
 
 Tagmate is a fully-deployed production-level cross-platform app built using React-Native and serverless architecture. The app, which is live on Google Play Store and Apple App Store, allows you to discover new events and host your own events in your university.
 

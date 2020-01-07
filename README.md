@@ -1,5 +1,3 @@
-<br>
-
 # Tagmate
 
  <img align="right" width="225" height="480" src="https://tagmateapp.com/gifs/login.gif">

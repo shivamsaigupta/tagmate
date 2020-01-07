@@ -8,10 +8,6 @@ Tagmate is built using React-Native on the front-end and Firebase's Cloud Functi
 
 <br>
 <br>
-<br>
-<br>
-
-
 
 # Discover
 
@@ -20,22 +16,12 @@ Tagmate is built using React-Native on the front-end and Firebase's Cloud Functi
 Discover whats happening near you. Swipe left to decline, swipe right to signal your interest in attending the event. When you swipe right, the event is added to your dashboard, where you can access all of your upcoming and past events.
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 # Host
 <img align="right" width="225" height="480" src="https://tagmateapp.com/gifs/host.gif">
 
 You can also host your own events. Check out Tagmate live on Google Play Store or Apple App Store. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.Check out Tagmate live on Google Play Store or Apple App Store. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

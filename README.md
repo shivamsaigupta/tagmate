@@ -22,7 +22,7 @@ The app features include
 
 # Demo
 
-Check out Tagmate live on Google Play Store or Apple App Store. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.
+Check out Tagmate live on [Google Play Store](https://play.google.com/store/apps/details?id=com.chillmate) or [Apple App Store](https://apps.apple.com/us/app/instajude/id1468743902). You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.
 
 >  - **Demo Account Credentials**
 >  - Email: tagmatedemo@ashoka.edu.in

@@ -3,7 +3,7 @@
 ![login screenshot](https://tagmateapp.com/gifs/login.gif)  ![home screenshot](https://tagmateapp.com/gifs/swipe1.gif) ![host screenshot](https://tagmateapp.com/gifs/host.gif)
 
 
-A fully-deployed production-level cross-platform app built using React-Native and serverless architecture. Tagmate is an app that allows you to discover new events near you and host your own events. Discover whats happening near you. Swipe left to decline, swipe right to signal your interest in attending the event. When you swipe right, the event is added to your dashboard, where you can access all of your upcoming and past events. You can also host your own events. 
+Tagmate is a fully-deployed production-level cross-platform app built using React-Native and serverless architecture. The app, which is live on Google Play Store and Apple App Store, allows you to discover new events and host your own events in your university.
 
 # What's under the hood?
 

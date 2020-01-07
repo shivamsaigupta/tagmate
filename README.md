@@ -24,9 +24,9 @@ The app features include
 
 Check out Tagmate live on Google Play Store or Apple App Store. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.
 
-> **Demo Account Credentials**
-> Email: tagmatedemo@ashoka.edu.in
-> Password: TagmateIsCool<3
+>  - **Demo Account Credentials**
+>  - Email: tagmatedemo@ashoka.edu.in
+>  - Password: TagmateIsCool<3
 
 
 # Contributors

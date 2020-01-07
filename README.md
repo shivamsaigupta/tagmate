@@ -38,7 +38,7 @@ Check out Tagmate live on [Google Play Store](https://play.google.com/store/apps
 >  - Password: TagmateIsCool<3
 
 # Instructions
-If you are trying to create your own Tagmate-like app by forking this repo, please follow the instructions below.
+If you are trying to create your own Tagmate-like app, please follow the instructions below after you clone the repo.
 
 1. Create a Firebase project
 2. Enable Google SignIn in Authentication tab

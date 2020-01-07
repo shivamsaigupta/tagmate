@@ -1,7 +1,8 @@
 
 # Tagmate
+![login screenshot](https://tagmateapp.com/gifs/login.gif) &ensp;
+![home screenshot](https://tagmateapp.com/gifs/swipe1.gif)&ensp; ![host screenshot](https://tagmateapp.com/gifs/host.gif)
 
-<img align="center" width="225" height="480" src="https://tagmateapp.com/gifs/login.gif"> <img align="center" width="225" height="480" src="https://tagmateapp.com/gifs/swipe1.gif">  <img align="center" width="225" height="480" src="https://tagmateapp.com/gifs/host.gif">
 
 A fully-deployed production-level cross-platform app built using React-Native and serverless architecture. Tagmate is an app that allows you to discover new events near you and host your own events.
 
@@ -9,11 +10,11 @@ Tagmate is built using React-Native on the front-end and Firebase's Cloud Functi
 
 
 # Discover
-
 Discover whats happening near you. Swipe left to decline, swipe right to signal your interest in attending the event. When you swipe right, the event is added to your dashboard, where you can access all of your upcoming and past events.
 
-# Host
 
+
+# Host
 You can also host your own events. 
 
 # Demo

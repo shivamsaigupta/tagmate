@@ -13,11 +13,11 @@ Discover whats happening near you. Swipe left to decline, swipe right to signal 
 
 
 
-## Host
+# Host
 
 You can also host your own events. 
 
-## Demo
+# Demo
 
 Check out Tagmate live on Google Play Store or Apple App Store. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.
 
@@ -26,7 +26,7 @@ Check out Tagmate live on Google Play Store or Apple App Store. You will need a 
 > Password: TagmateIsCool<3
 
 
-## Contributors
+# Contributors
 
 Tagmate was originally intended to be commercial project founded by Shivam Sai Gupta (@shivamsaigupta) and Neeraj Pandey (@neerajp99). As of January 2020, we have made a decision to stop supporting the commercial Tagmate and make it open-source.
 
@@ -34,7 +34,7 @@ Tagmate was originally intended to be commercial project founded by Shivam Sai G
 > @shivamsaigupta
 > @neerajp99
 
-## Hire Us
+# Hire Us
 
 If you want to get your own app made, feel free to contact us.
 

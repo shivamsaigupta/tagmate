@@ -1,41 +1,64 @@
 // Login.js
-import React, {Component} from 'react'
-import firebase, { config } from 'react-native-firebase';
-import { GoogleSignin, GoogleSigninButton, statusCodes } from 'react-native-google-signin';
-import {connect} from 'react-redux';
-import AsyncStorage from '@react-native-community/async-storage';
-import {loginUser, loginGoogleUser,addNewGoogleUser} from '../../actions';
-import {populateUserServices, addNetworkDetails, setInitialThumbnail} from '../../lib/firebaseUtils';
-import { StyleSheet, Text, TextInput, View, Button, Image, ImageBackground, Dimensions, TouchableOpacity, Platform, ActivityIndicator } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import Video from 'react-native-video'
-import bgImage from '../../img/background.jpg'
-import logo from '../../img/logo.png'
-import bgVideo from '../../vid/vid.mp4'
-import {adourStyle} from '../style/AdourStyle'
+import React, { Component } from "react";
+import firebase, { config } from "react-native-firebase";
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes
+} from "react-native-google-signin";
+import { connect } from "react-redux";
+import AsyncStorage from "@react-native-community/async-storage";
+import { loginUser, loginGoogleUser, addNewGoogleUser } from "../../actions";
+import {
+  populateUserServices,
+  addNetworkDetails,
+  setInitialThumbnail
+} from "../../lib/firebaseUtils";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  Button,
+  Image,
+  ImageBackground,
+  Dimensions,
+  TouchableOpacity,
+  Platform,
+  ActivityIndicator
+} from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import Video from "react-native-video";
+import bgImage from "../../img/background.jpg";
+import logo from "../../img/logo.png";
+import bgVideo from "../../vid/vid.mp4";
+import { adourStyle } from "../style/AdourStyle";
 
-const { width: WIDTH } = Dimensions.get('window')
+const { width: WIDTH } = Dimensions.get("window");
 
 class Login extends Component {
-  state = { email: '', password: '', showPass: true, passPress: false, loading:false}
-
+  state = {
+    email: "",
+    password: "",
+    showPass: true,
+    passPress: false,
+    loading: false
+  };
 
   handleLogin = () => {
     const { email, password } = this.state;
 
     // Ensuring no fields are empty:
-    if(email == '' || password == '')
-      {
-        alert('Please fill all the fields.');
-        return;
-      }
-    else this.props.loginUser({email, password});
-  }
+    if (email == "" || password == "") {
+      alert("Please fill all the fields.");
+      return;
+    } else this.props.loginUser({ email, password });
+  };
 
   componentDidMount() {
     this._isMounted = true;
-    firebase.database().goOnline()
+    firebase.database().goOnline();
     GoogleSignin.configure({
       //It is mandatory to call this method before attempting to call signIn()
       /*
@@ -44,19 +67,16 @@ class Login extends Component {
       */
       scopes: [],
       // Repleace with your webClientId generated from Firebase console
-      webClientId:
-        'REPLACE_ME',//'',
-      hostedDomain: '', // specifies a hosted domain restriction
-      loginHint: '', // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
-      forceConsentPrompt: true, // [Android] if you want to show the authorization prompt at each login. Test
+      webClientId: "GOOGLE_AUTH_WEB_CLIENT_ID",
+      hostedDomain: "", // specifies a hosted domain restriction
+      loginHint: "", // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
+      forceConsentPrompt: true // [Android] if you want to show the authorization prompt at each login. Test
     });
 
-    firebase.analytics().setCurrentScreen('Login');
-
+    firebase.analytics().setCurrentScreen("Login");
   }
 
-  componentWillUnmount()
-  {
+  componentWillUnmount() {
     this._isMounted = false;
   }
 
@@ -71,120 +91,140 @@ class Login extends Component {
   };
 
   _signIn = async () => {
-    if(this.state.loading) return;
+    if (this.state.loading) return;
     try {
-      this.setState({loading:true, invalid_email:false});
+      this.setState({ loading: true, invalid_email: false });
       await GoogleSignin.hasPlayServices({
         //Check if device has Google Play Services installed.
         //Always resolves to true on iOS.
-        showPlayServicesUpdateDialog: true,
+        showPlayServicesUpdateDialog: true
       });
 
       const isSignedIn = await GoogleSignin.isSignedIn();
-      if(isSignedIn == true){
+      if (isSignedIn == true) {
         await GoogleSignin.signOut();
       }
       const userInfo = await GoogleSignin.signIn();
 
-      this.setState({ g_first_name: userInfo.user.givenName, g_last_name: userInfo.user.familyName, g_profile: userInfo.user.photo });
+      this.setState({
+        g_first_name: userInfo.user.givenName,
+        g_last_name: userInfo.user.familyName,
+        g_profile: userInfo.user.photo
+      });
 
       // create a new firebase credential with the token
-      const credential = firebase.auth.GoogleAuthProvider.credential(userInfo.idToken, userInfo.accessToken)
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        userInfo.idToken,
+        userInfo.accessToken
+      );
       // login with credential
-      const currentUser = await firebase.auth().signInWithCredential(credential);
+      const currentUser = await firebase
+        .auth()
+        .signInWithCredential(credential);
 
       //NOTE: Any change here must also be in Loading.js
 
       //India
-      let eduIn = (currentUser.user.email.slice(-7) === '.edu.in');
-      let acIn = (currentUser.user.email.slice(-6) === '.ac.in');
+      let eduIn = currentUser.user.email.slice(-7) === ".edu.in";
+      let acIn = currentUser.user.email.slice(-6) === ".ac.in";
       //USA & others
-      let edu = (currentUser.user.email.slice(-4) === '.edu');
+      let edu = currentUser.user.email.slice(-4) === ".edu";
       //UK
-      let acUk = (currentUser.user.email.slice(-6) === '.ac.uk');
+      let acUk = currentUser.user.email.slice(-6) === ".ac.uk";
 
-      let testAccount = (currentUser.user.email === 'chillmateapp@gmail.com');
+      let testAccount = currentUser.user.email === "chillmateapp@gmail.com";
 
-      if(eduIn || acIn || edu || acUk || testAccount)
-      {
-        await addNewGoogleUser(currentUser.user.uid,this.state.g_first_name, this.state.g_last_name, this.state.g_profile);
-        if(this._isMounted)
-        {
+      if (eduIn || acIn || edu || acUk || testAccount) {
+        await addNewGoogleUser(
+          currentUser.user.uid,
+          this.state.g_first_name,
+          this.state.g_last_name,
+          this.state.g_profile
+        );
+        if (this._isMounted) {
           populateUserServices(currentUser).then(res => {
             addNetworkDetails(currentUser).then(secRes => {
               setInitialThumbnail(currentUser).then(lastRes => {
-                this.setState({loading:false});
+                this.setState({ loading: false });
                 AsyncStorage.getItem("alreadyLaunchedHome").then(value => {
-                      if(value == null){
-                          console.log('Taking the user to onboarding profile screen.')
-                           this.props.navigation.navigate('NewUserSetProfile');
-                           //We hope Home.js takes care of setting alreadyLaunchedHome to true
-                      }
-                      else{
-                           console.log('Taking the user straight to Home. Not the first launch.')
-                           this.props.navigation.navigate('MainStack');
-                      }})
-
-              })
-            })
-          })
+                  if (value == null) {
+                    console.log(
+                      "Taking the user to onboarding profile screen."
+                    );
+                    this.props.navigation.navigate("NewUserSetProfile");
+                    //We hope Home.js takes care of setting alreadyLaunchedHome to true
+                  } else {
+                    console.log(
+                      "Taking the user straight to Home. Not the first launch."
+                    );
+                    this.props.navigation.navigate("MainStack");
+                  }
+                });
+              });
+            });
+          });
         }
-      }
-      else if(this._isMounted)
-      {
-        this.setState({loading:false, invalid_email:true,});
+      } else if (this._isMounted) {
+        this.setState({ loading: false, invalid_email: true });
         this._signOut();
       }
     } catch (error) {
-      this.setState({loading:false});
-      console.log('Message', error.message);
+      this.setState({ loading: false });
+      console.log("Message", error.message);
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('User Cancelled the Login Flow');
+        console.log("User Cancelled the Login Flow");
       } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('Signing In');
+        console.log("Signing In");
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Play Services Not Available or Outdated');
+        console.log("Play Services Not Available or Outdated");
       } else {
-        console.log('Some Other Error Happened');
+        console.log("Some Other Error Happened");
       }
     }
-  }
-
+  };
 
   handleLoading = () => {
-    if(this.props.loading){
+    if (this.props.loading) {
       return <ActivityIndicator />;
     } else {
       return <Text style={styles.text}> Login </Text>;
     }
-  }
+  };
 
   showPass = () => {
     if (this.state.showPass == true) {
-      this.setState({ showPass: false})
+      this.setState({ showPass: false });
     } else {
-      this.setState({ showPass: true})
+      this.setState({ showPass: true });
     }
-  }
+  };
 
   render() {
     return (
       <View style={styles.backgroundContainer}>
-      <Video source={bgVideo} repeat resizeMode="cover" style={StyleSheet.absoluteFill} />
-      <View style={{alignItems: 'center', justifyContent: 'center'}}>
-        <View style={styles.logoContainer}>
-          <Image source={logo} style={styles.logo} />
-          <Text style={adourStyle.logoSubtitle}>Know what's happening on your campus</Text>
-        </View>
-          <Text style={{ color: 'red', textAlign: 'center', marginTop: 5 }}>
+        <Video
+          source={bgVideo}
+          repeat
+          resizeMode="cover"
+          style={StyleSheet.absoluteFill}
+        />
+        <View style={{ alignItems: "center", justifyContent: "center" }}>
+          <View style={styles.logoContainer}>
+            <Image source={logo} style={styles.logo} />
+            <Text style={adourStyle.logoSubtitle}>
+              Know what's happening on your campus
+            </Text>
+          </View>
+          <Text style={{ color: "red", textAlign: "center", marginTop: 5 }}>
             {this.props.error}
           </Text>
-          {
-            this.state.invalid_email &&
-            <Text style={{ color: '#ff7e75', textAlign: 'center', marginTop: 5 }}>
+          {this.state.invalid_email && (
+            <Text
+              style={{ color: "#ff7e75", textAlign: "center", marginTop: 5 }}
+            >
               Please use your university email to login.
             </Text>
-          }
+          )}
           {/*
         <View style={styles.inputContainer}>
         <Icon name={'email'} size={25} color={'rgba(255, 255, 255, 0.7)'} style={styles.inputIcon} />
@@ -225,22 +265,35 @@ class Login extends Component {
         </Text>
         */}
 
-        {
-          this.state.loading && <View style={{marginBottom: 15}}>
-                                    <ActivityIndicator size="large" color="white" />
-                                </View>
-        }
+          {this.state.loading && (
+            <View style={{ marginBottom: 15 }}>
+              <ActivityIndicator size="large" color="white" />
+            </View>
+          )}
 
+          <GoogleSigninButton
+            style={styles.btnGoogleLogin}
+            disabled={this.state.loading}
+            size={GoogleSigninButton.Size.Wide}
+            color={GoogleSigninButton.Color.Light}
+            onPress={this._signIn}
+          />
 
-        <GoogleSigninButton style={styles.btnGoogleLogin} disabled={this.state.loading}  size ={GoogleSigninButton.Size.Wide} color={GoogleSigninButton.Color.Light} onPress={this._signIn}/>
-
-        {Platform.OS === 'ios' && <Text style={styles.clickableText} onPress={() => this.props.navigation.navigate('EmailLogin', {navigation: this.props.navigation })} >
-          Sign-In Using Email and Password
-        </Text>}
-
+          {Platform.OS === "ios" && (
+            <Text
+              style={styles.clickableText}
+              onPress={() =>
+                this.props.navigation.navigate("EmailLogin", {
+                  navigation: this.props.navigation
+                })
+              }
+            >
+              Sign-In Using Email and Password
+            </Text>
+          )}
+        </View>
       </View>
-      </View>
-    )
+    );
   }
 }
 const styles = StyleSheet.create({
@@ -248,9 +301,9 @@ const styles = StyleSheet.create({
     flex: 1,
     width: null,
     height: null,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    backgroundColor: 'purple'
+    justifyContent: "flex-end",
+    alignItems: "center",
+    backgroundColor: "purple"
   },
   textInput: {
     height: 45,
@@ -258,11 +311,11 @@ const styles = StyleSheet.create({
     borderRadius: 45,
     fontSize: 16,
     paddingLeft: 45,
-    backgroundColor: 'rgba(0, 0, 0, 0.35)',
-    color: 'rgba(255, 255, 255, 0.7)'
+    backgroundColor: "rgba(0, 0, 0, 0.35)",
+    color: "rgba(255, 255, 255, 0.7)"
   },
   logoContainer: {
-    alignItems: 'center'
+    alignItems: "center"
   },
   logo: {
     height: 71,
@@ -270,7 +323,7 @@ const styles = StyleSheet.create({
     marginBottom: 2
   },
   inputIcon: {
-    position: 'absolute',
+    position: "absolute",
     top: 10,
     left: 12
   },
@@ -281,8 +334,8 @@ const styles = StyleSheet.create({
     width: WIDTH - 55,
     height: 45,
     borderRadius: 25,
-    backgroundColor: '#432577',
-    justifyContent: 'center',
+    backgroundColor: "#432577",
+    justifyContent: "center",
     marginTop: 20
   },
   btnGoogleLogin: {
@@ -291,30 +344,30 @@ const styles = StyleSheet.create({
     marginBottom: 35
   },
   btnEye: {
-    position: 'absolute',
+    position: "absolute",
     top: 8,
     right: 16
   },
   text: {
-    color: 'rgba(255, 255, 255, 0.7)',
+    color: "rgba(255, 255, 255, 0.7)",
     fontSize: 16,
-    textAlign: 'center'
+    textAlign: "center"
   },
   clickableText: {
-    color: 'rgba(255, 255, 255, 0.75)',
+    color: "rgba(255, 255, 255, 0.75)",
     fontSize: 12,
-    textAlign: 'center',
+    textAlign: "center",
     marginTop: 8,
     marginBottom: 28
   }
-})
+});
 
 const mapStateToProps = state => {
   /* only return the property that we care about */
-  return{
+  return {
     error: state.auth.error,
     loading: state.auth.loading
   };
 };
 
-export default connect(mapStateToProps, {loginUser}) (Login);
+export default connect(mapStateToProps, { loginUser })(Login);

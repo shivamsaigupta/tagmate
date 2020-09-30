@@ -53,3 +53,6 @@ Tagmate was originally intended to be a commercial project and was founded by Sh
 >  - @shivamsaigupta
 >  - @neerajp99
 >   - Contributors Welcome!
+
+# Update
+This project is no longer being supported by us. The core contributors of this project have gone on to pursue other opportunities.

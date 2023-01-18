@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "child-process-promise": "^2.2.1",
-    "firebase-admin": "^8.2.0",
+    "firebase-admin": "^11.4.1",
     "firebase-functions": "^3.0.2",
     "lodash": "^4.17.11",
     "uuid": "^3.0.1"

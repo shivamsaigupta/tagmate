@@ -15,7 +15,7 @@
 </p>
 
 
-Tagmate is a fully-deployed production-level cross-platform app built using React-Native and serverless architecture. The app, which is live on Google Play Store and Apple App Store, allows you to discover new events and host your own events in your university.
+Tagmate is a fully-deployed production-level cross-platform app built using React-Native and serverless architecture. The app, which is live on Google Play Store and Apple App Store, allows you to discover new events and host your own events in your local community.
 
 # What's under the hood?
 

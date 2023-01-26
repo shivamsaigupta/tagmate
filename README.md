@@ -1,16 +1,19 @@
-<p align="center">
-  <img align="center" src="https://tagmateapp.com/assets/images/tagmate_black.png" width="290"/>
+# Tagmate 
+<p>
+  Find out what's happening around you
 </p>
 
-<p align="center">
-<a href='https://apps.apple.com/in/app/tagmate/id1468743902?mt=8'><img alt='Get it on App Store' src='https://tagmateapp.com/assets/images/apple_badge.svg' height="50" /></a> &ensp; <a href='https://play.google.com/store/apps/details?id=com.chillmate&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://tagmateapp.com/assets/images/playstore_badge_str.png' height="50" /></a> &ensp; <a href="https://www.producthunt.com/posts/tagmate?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tagmate" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167765&theme=light" alt="Tagmate - Discover & host meetups near you | Product Hunt Embed" style="width: 233px; height: 50px;" width="233px" height="50px" /></a> 
+<p>
+ <a href="https://www.producthunt.com/posts/tagmate?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tagmate" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=167765&theme=light" alt="Tagmate - Discover & host meetups near you | Product Hunt Embed" style="width: 233px; height: 50px;" width="233px" height="50px" /></a> 
 </p>
 
-<p align="center">
-<img align="center" src="https://tagmateapp.com/gifs/login.gif"/>
-<img align="center" src="https://tagmateapp.com/gifs/swipe1.gif"/>
-<img align="center" src="https://tagmateapp.com/gifs/host.gif"/>
+<p>
+<kbd><img align="center" width="200" src="https://play-lh.googleusercontent.com/XrNTXjwvbkI8wzh7qiUl1-wQXArJgybIe81lzJGWEHA1wkXT6FBH4WQlF51vECnlICbL=w2560-h1440-rw"/> </kbd>
+<kbd><img align="center" width="200" src="https://play-lh.googleusercontent.com/7C23rLuI2pdLrZ2E119KrTYAVPILagYyCEaYef8zTMBG5MSY0Hp7-dvXRKXo-JlQdwU=w2560-h1440-rw"/> </kbd>
+<kbd><img align="center" width="200" src="https://play-lh.googleusercontent.com/4maROOtfLNmuQrnRJ8vIZmNtC_tNX1-rUzDrx6ta2g4XbKz79qWMC5LaDN8nLd66XA=w2560-h1440-rw"/> </kbd>
+<kbd><img align="center" width="200" src="https://play-lh.googleusercontent.com/XW4wRez2RJnOvA0ZHBRzMj912FRGgMvVunsPltFLbE2HbW2SzajiomtidFvnWXNsNcY=w2560-h1440-rw"/></kbd>
 </p>
+
 
 Tagmate is a fully-deployed production-level cross-platform app built using React-Native and serverless architecture. The app, which is live on Google Play Store and Apple App Store, allows you to discover new events and host your own events in your university.
 
@@ -56,3 +59,5 @@ Tagmate was originally intended to be a commercial project and was founded by Sh
 
 # Update
 This project is no longer being supported by us. The core contributors of this project have gone on to pursue other opportunities.
+
+

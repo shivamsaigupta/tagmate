@@ -13,7 +13,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "react": "16.8.3",
-    "react-native": "0.59.8",
+    "react-native": "0.71.3",
     "react-native-actionsheet": "^2.4.2",
     "react-native-card-stack-swiper": "^1.1.0",
     "react-native-elements": "^1.1.0",

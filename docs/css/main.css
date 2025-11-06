@@ -156,10 +156,32 @@ nav {
 }
 
 .screenshots-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
   gap: 2rem;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.screenshots-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.screenshots-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.screenshots-grid::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.screenshots-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
 
 .screenshot-item {
@@ -168,6 +190,9 @@ nav {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
+  flex: 0 0 250px;
+  min-width: 250px;
+  scroll-snap-align: start;
 }
 
 .screenshot-item:hover {
@@ -267,6 +292,13 @@ nav {
   font-size: 0.9rem;
 }
 
+.credential-item code {
+  background-color: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
 /* Instructions Section */
 .instructions {
   padding: 3rem 2rem;
@@ -316,6 +348,10 @@ nav {
 .contributor-list li {
   padding: 0.5rem 0;
   color: var(--text-light);
+}
+
+.contributor-list a {
+  font-weight: 600;
 }
 
 /* Update Section */
@@ -397,9 +433,9 @@ footer a:hover {
     font-size: 1.2rem;
   }
 
-  .screenshots-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+  .screenshot-item {
+    flex: 0 0 200px;
+    min-width: 200px;
   }
 
   .app-links {
@@ -435,5 +471,10 @@ footer a:hover {
 
   .hero-tagline {
     font-size: 1rem;
+  }
+
+  .screenshot-item {
+    flex: 0 0 180px;
+    min-width: 180px;
   }
 }

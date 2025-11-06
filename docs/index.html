@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagmate - Discover & Host Meetups</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-logo">Tagmate</div>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#credits">Credits</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Tagmate</h1>
+      <p class="hero-tagline">Find out what's happening around you</p>
+      <div class="product-hunt-badge">
+        <a href="https://www.producthunt.com/posts/tagmate?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-tagmate" target="_blank">
+          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=174317&theme=light" alt="Tagmate - Discover and host meetups" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots">
+    <div class="container">
+      <h2>App Screenshots</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-item">
+          <img src="https://play-lh.googleusercontent.com/XrNTXjwvbkI8wzh7qiUul1-wQXAiJgybiIe81lzJGWEHA1wkXT6FBH4WQlF51vECnlICAaL=w2560-h1440-rw" alt="Tagmate Guest List">
+        </div>
+        <div class="screenshot-item">
+          <img src="https://play-lh.googleusercontent.com/7C23rLuI2pdLrZ2E119KrTYAVPILagYyCEaYef8zTMBG5MSY0Hp7-dvxRKXo-JlQdwU=w2560-h1440-rw" alt="Tagmate Dashboard">
+        </div>
+        <div class="screenshot-item">
+          <img src="https://play-lh.googleusercontent.com/4maROOtfLNmqUrnRJ8vIZmNtC_tNX1-rUzDrx6ta2g4XbKz79qWMC5LaDN8nLd66XA=w2560-h1440-rw" alt="Tagmate Activity">
+        </div>
+        <div class="screenshot-item">
+          <img src="https://play-lh.googleusercontent.com/XW4wRez2RJnOvA0ZHBRzMj912FRGgMvVunsPltFLbE2HbW2SzajiomtidFvnWXNsNcY=w2560-h1440-rw" alt="Tagmate Chat">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>What's under the hood?</h2>
+      <p>Tagmate is built using React-Native along with a serverless architecture for maximum scalability. The app utilizes Firebase's Cloud Functions extensively to ensure elastic capacity.</p>
+      <p>The app features include:</p>
+      <div class="feature-item">Swipable newsfeed</div>
+      <div class="feature-item">Integration with Google Calendar</div>
+      <div class="feature-item">Push Notifications (for both iOS and Android devices)</div>
+      <div class="feature-item">User profiles</div>
+      <div class="feature-item">Google Authentication integration</div>
+      <div class="feature-item">Group messaging</div>
+      <div class="feature-item">Direct messaging</div>
+      <div class="feature-item">and more...</div>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="container">
+      <h2>Demo</h2>
+      <p>Check out Tagmate live on <a href="https://play.google.com/store/apps/details?id=com.chillmate" target="_blank">Google Play Store</a> or <a href="https://apps.apple.com/us/app/instajude/id1468743902" target="_blank">Apple App Store</a>. You will need a university email ID to login. If you are, however, an Apple device user, you may use the following demo account to login.</p>
+      
+      <div class="demo-credentials">
+        <h3>Demo Account Credentials</h3>
+        <div class="credential-item">
+          <strong>Email:</strong>
+          <code>tagmatedemo@ashoka.edu.in</code>
+        </div>
+        <div class="credential-item">
+          <strong>Password:</strong>
+          <code>TagmateIsCool&lt;3</code>
+        </div>
+      </div>
+
+      <div class="app-links">
+        <a href="https://play.google.com/store/apps/details?id=com.chillmate" target="_blank" class="app-link-btn">Google Play Store</a>
+        <a href="https://apps.apple.com/us/app/instajude/id1468743902" target="_blank" class="app-link-btn">Apple App Store</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="instructions">
+    <div class="container">
+      <h2>Instructions</h2>
+      <p>If you are trying to create your own Tagmate-like app, please follow the instructions below after you clone the repo.</p>
+      <ol>
+        <li>Create a Firebase project</li>
+        <li>Enable Google SignIn in Authentication tab</li>
+        <li>Generate <code>google-services.json</code> file and put it in <code>./android/app</code> path.</li>
+      </ol>
+      <p style="margin-top: 2rem;">If you want to build an APK for Android, ensure you've set your credentials in <code>./android/gradle.properties</code>.</p>
+    </div>
+  </section>
+
+  <section class="credits" id="credits">
+    <div class="container">
+      <h2>Credits</h2>
+      <p>Tagmate was originally intended to be a commercial project and was founded by <strong>Shivam Sai Gupta</strong> (<a href="https://github.com/shivamsaigupta" target="_blank">@shivamsaigupta</a>) and <strong>Neeraj Pandey</strong> (<a href="https://github.com/neerajp99" target="_blank">@neerajp99</a>). As of January 2020, we have made a decision to stop supporting the commercially available Tagmate and make it open-source.</p>
+      
+      <div class="contributor-list">
+        <h3>Contributors</h3>
+        <ul>
+          <li><a href="https://github.com/shivamsaigupta" target="_blank">@shivamsaigupta</a></li>
+          <li><a href="https://github.com/neerajp99" target="_blank">@neerajp99</a></li>
+          <li>Contributors Welcome!</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="update">
+    <div class="container">
+      <h2>Update</h2>
+      <div class="update-content">
+        <p>This project is no longer being supported by us. We have opened up the source code for anyone who wants to make their own Tagmate-like app.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Tagmate. Built with React-Native and Firebase. Open source on <a href="https://github.com/shivamsaigupta/tagmate" target="_blank">GitHub</a>.</p>
+  </footer>
+
+</body>
+</html>
